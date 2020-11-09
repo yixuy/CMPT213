@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+<div align="center">
+<!--    We need to use switch case as block-->
+    <th:block th:switch="${game.status}">
+        <div th:case="Win">
+            <img th:src="@{/images/win.jpeg}" />
+            <p><h1>You win!!</h1>
+            <h2><p th:utext="'Word is '+${game.targetWord}"></p></h2>
+            <br> <a href="/welcome">Back to welcome page</a><br/>
+        </div>
+<!--    <th:block th:switch="${game.status}">-->
+        <div th:case = "Lose">
+            <img th:src="@{/images/lose.jpg}" />
+            <p><h1>You Lose!!</h1></p>
+            <h2><p th:utext="'Word is '+${game.targetWord}"></p></h2>
+            <br> <a href="/welcome">Back to welcome page</a><br/>
+        </div>
+    </th:block>
+</div>
+</body>
+</html>

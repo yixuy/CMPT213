@@ -1,0 +1,30 @@
+<!--https://stock.adobe.com/ca/search?k=hangman-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet"/>
+    <!--    Tag name -->
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+<div id="update"  th:fragment="update">
+    <div align="center">
+        <img th:src="@{/images/welcome.jpg}" />
+        <h1><p th:utext="'Game '+${game.id}"></p></h1>
+        <form action="/game" th:action="@{/game}" method="post" th:object="${game}" >
+            <p th:utext="'Status: '+${game.status}"></p>
+            <p th:utext="'Word: '+${game.showWord}"></p>
+            <p th:utext="'Guess '+${game.totalGuessTimes}+' times,
+                        out of '+${game.wrongGuessTimes}+' incorrect.
+                        Wrong guess chance left '+${7 - game.wrongGuessTimes}+' times'"></p>
+            <label>One Guess Character:</label>
+            <input type="text" class="form-control" onfocus="this.value=''"
+                   maxlength="1"  size="1" th:field="*{guessChar}"<br/>
+            <br><button type="submit">Guess</button><br/>
+            <br> <a href="/welcome">Back to welcome page</a><br/>
+        </form>
+    </div>
+</div>
+</body>
+</html>

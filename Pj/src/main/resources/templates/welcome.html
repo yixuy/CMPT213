@@ -1,0 +1,42 @@
+<!--https://stock.adobe.com/ca/search?k=hangman-->
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <link th:href="@{/styles/main.css}" rel="stylesheet" />
+<!--    Tag name -->
+    <title>CMPT 213 Online Hangman Game</title>
+</head>
+<body>
+<div align="center">
+        <form action="#" th:action="@{/game}">
+            <img th:src="@{/images/welcome.jpg}" />
+            <h1>Hello, Welcome to The Hangman Game!</h1>
+            <h2>
+                Rule:
+            </h2>
+            <p>
+                all input should be in lower case(eg. a)
+            </p>
+            <p>
+                Make a guess character for the word, WIN for all characters in word you get. :)
+            </p>
+            <p>
+                The max number of incorrect guesses is 7 for one game, if you run out,
+                Unfortunately, you LOSE :(
+            </p>
+            <h2>
+                Introduction:
+            </h2>
+            </p>
+                Author name: Henry Ye
+            </p>
+                SFU ID: 301368702
+            </p>
+                Email: yixuy@sfu.ca
+            </p>
+            <button type="submit">Start a new game</button>
+        </form>
+</div>
+</body>
+</html>
